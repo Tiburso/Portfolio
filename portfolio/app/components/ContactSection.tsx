@@ -9,40 +9,57 @@ export default function ContactSection() {
     threshold: 0.1,
   })
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  }
+
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="py-20 bg-secondary text-white">
       <div className="container mx-auto px-4">
         <motion.div
           ref={ref}
-          initial={{ opacity: 0, y: 50 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.5 }}
-          className="max-w-3xl mx-auto text-center"
+          variants={containerVariants}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          className="max-w-4xl mx-auto text-center"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-primary">Get In Touch</h2>
-          <p className="text-secondary mb-8">
-            I'm always open to new opportunities and collaborations. Feel free to reach out!
-          </p>
+          <motion.h2 variants={itemVariants} className="text-3xl md:text-4xl font-bold mb-8">
+            Get In Touch
+          </motion.h2>
+          <motion.p variants={itemVariants} className="text-lg mb-8 text-gray-300">
+            I&apos;m always open to new opportunities and collaborations. Feel free to reach out!
+          </motion.p>
           <motion.a
+            variants={itemVariants}
             href="mailto:your.email@example.com"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-block bg-primary text-white px-8 py-3 rounded-full font-medium hover:bg-primary-dark transition-colors"
+            className="inline-block bg-accent text-white px-8 py-3 rounded-full font-medium hover:bg-opacity-90 transition-colors"
           >
             Contact Me
           </motion.a>
-          <div className="mt-12 flex justify-center space-x-6">
+          <motion.div variants={itemVariants} className="mt-12 flex justify-center space-x-6">
             {["GitHub", "LinkedIn", "Twitter"].map((platform) => (
-              <motion.a
-                key={platform}
-                href="#"
-                whileHover={{ y: -3 }}
-                className="text-secondary hover:text-primary transition-colors"
-              >
+              <a key={platform} href="#" className="text-gray-300 hover:text-white transition-colors">
                 {platform}
-              </motion.a>
+              </a>
             ))}
-          </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

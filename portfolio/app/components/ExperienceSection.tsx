@@ -53,24 +53,26 @@ export default function ExperienceSection() {
   }
 
   return (
-    <section id="experience" className="py-20 bg-white">
+    <section id="experience" className="py-20 bg-card-bg">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-primary">Experience</h2>
         <motion.div
           ref={ref}
           variants={containerVariants}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          className="max-w-3xl mx-auto"
+          className="max-w-4xl mx-auto"
         >
+          <motion.h2 variants={itemVariants} className="text-3xl md:text-4xl font-bold mb-12 text-center text-primary">
+            Work Experience
+          </motion.h2>
           {experiences.map((exp, index) => (
-            <motion.div key={index} variants={itemVariants} className="mb-12 relative pl-8 border-l-2 border-primary">
-              <div className="absolute w-4 h-4 bg-primary rounded-full -left-[9px] top-1"></div>
-              <h3 className="text-xl font-semibold mb-1 text-primary">{exp.title}</h3>
+            <motion.div key={index} variants={itemVariants} className="mb-12 relative pl-8 border-l-2 border-secondary">
+              <div className="absolute w-4 h-4 bg-secondary rounded-full -left-[9px] top-1"></div>
+              <h3 className="text-xl font-semibold mb-1 text-secondary">{exp.title}</h3>
               <p className="text-accent mb-2">
                 {exp.company} | {exp.period}
               </p>
-              <p className="text-secondary">{exp.description}</p>
+              <p className="text-text">{exp.description}</p>
             </motion.div>
           ))}
         </motion.div>

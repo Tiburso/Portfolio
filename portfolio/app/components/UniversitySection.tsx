@@ -58,21 +58,25 @@ export default function UniversitySection() {
   return (
     <section id="university" className="py-20 bg-background">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-primary">University Education</h2>
         <motion.div
           ref={ref}
           variants={containerVariants}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto"
+          className="max-w-4xl mx-auto"
         >
-          {courses.map((course, index) => (
-            <motion.div key={index} variants={itemVariants} className="bg-white p-6 rounded-lg shadow-lg">
-              <h3 className="text-xl font-semibold mb-2 text-primary">{course.name}</h3>
-              <p className="text-secondary mb-2">Grade: {course.grade}</p>
-              <p className="text-text-light">{course.description}</p>
-            </motion.div>
-          ))}
+          <motion.h2 variants={itemVariants} className="text-3xl md:text-4xl font-bold mb-12 text-center text-primary">
+            University Education
+          </motion.h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {courses.map((course, index) => (
+              <motion.div key={index} variants={itemVariants} className="bg-card-bg p-6 rounded-lg shadow-lg">
+                <h3 className="text-xl font-semibold mb-2 text-secondary">{course.name}</h3>
+                <p className="text-accent mb-2">Grade: {course.grade}</p>
+                <p className="text-text-light">{course.description}</p>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>
