@@ -1,6 +1,13 @@
 import { motion } from "framer-motion";
 
 const Header = () => {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    document.querySelector(`#${id}`)?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+
   return (
     <motion.header
       initial={{ opacity: 0, y: -20 }}
@@ -18,6 +25,7 @@ const Header = () => {
               <a
                 key={item}
                 href={`#${item}`}
+                onClick={(e) => handleClick(e, item)}
                 className="uppercase text-sm font-medium text-gray-700 hover:gradient-text transition-colors"
               >
                 {item}
