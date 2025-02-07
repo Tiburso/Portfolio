@@ -16,7 +16,7 @@ const About = () => {
 
         {/* Main content */}
         <div className="relative z-10 max-w-4xl mx-auto">
-          <div className="flex items-start gap-12 mb-8">
+          <div className="flex items-start gap-8 mb-2">
             <div className="flex-1">
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
@@ -31,7 +31,7 @@ const About = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                className="text-3xl md:text-4xl text-gray-700 mb-8"
+                className="text-3xl md:text-4xl text-gray-700 mb-2"
               >
                 Software Engineer & Problem Solver
               </motion.h2>
@@ -41,7 +41,7 @@ const About = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.3 }}
-              className="w-48 h-48 rounded-full flex-shrink-0 overflow-hidden bg-gradient-to-br from-purple-100 to-blue-100 shadow-lg"
+              className="w-48 h-48 rounded-full flex-shrink-0 overflow-hidden bg-gradient-to-br from-purple-100 to-blue-100 shadow-lg -mt-12"
             >
               <img
                 src="/src/assets/avatar.jpg"
@@ -55,7 +55,7 @@ const About = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
-            className="text-xl text-gray-600 leading-relaxed mb-12 backdrop-blur-sm"
+            className="text-xl text-gray-600 leading-relaxed mb-10 backdrop-blur-sm"
           >
             I'm passionate about building scalable and efficient solutions. My
             journey in technology started at a young age, and I've honed my
