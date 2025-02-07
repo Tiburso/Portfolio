@@ -1,5 +1,4 @@
-import { motion, useScroll, useSpring, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 
 const WORK_EXPERIENCES = [
   {
@@ -29,77 +28,58 @@ const WORK_EXPERIENCES = [
 ];
 
 const Experience = () => {
-  const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start center", "end center"],
-  });
-
-  // Create a spring animation for smooth transitions
-  const springProgress = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001,
-  });
-
-  // Create snap points for each experience
-  const progressBar = useTransform(springProgress, [0, 1], ["0%", "100%"]);
-
   return (
-    <div className="container-wrapper section-wrapper" ref={containerRef}>
+    <div className="container-wrapper section-wrapper">
       <h2 className="section-title gradient-text">Work Experience</h2>
 
-      {/* Timeline track and progress indicator */}
-      <div className="absolute left-8 top-40 bottom-20 w-0.5 bg-gray-200">
-        <motion.div
-          className="absolute w-2 h-12 -left-[3px] bg-blue-500 rounded-full"
-          style={{
-            top: progressBar,
-            transform: "translateY(-50%)",
-          }}
-        />
-      </div>
+      <div className="relative mt-8">
+        <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-gradient-to-b from-blue-500/20 to-purple-500/20 hidden md:block" />
 
-      <div className="space-y-8 ml-16">
-        {" "}
-        {/* reduced from space-y-16 */}
-        {WORK_EXPERIENCES.map((experience, index) => (
-          <motion.div
-            key={experience.company}
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.5 }}
-            className="relative"
-          >
-            <div className="card p-8">
-              <div className="flex justify-between items-start mb-4">
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-800">
-                    {experience.company}
-                  </h3>
-                  <p className="text-blue-600 font-medium">{experience.role}</p>
-                </div>
-                <span className="px-4 py-1 bg-blue-50 text-blue-600 rounded-full text-sm">
-                  {experience.period}
-                </span>
-              </div>
-              <p className="text-gray-600 leading-relaxed">
-                {experience.description}
-              </p>
-              <div className="mt-4 flex gap-2 flex-wrap">
-                {experience.skills.map((tech) => (
-                  <span
-                    key={tech}
-                    className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm"
-                  >
-                    {tech}
+        <div className="space-y-8">
+          {WORK_EXPERIENCES.map((experience, index) => (
+            <motion.div
+              key={experience.company}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              className="relative ml-0 md:ml-8"
+            >
+              <div
+                className="absolute -left-[8px] top-0 h-full w-[3px] bg-gradient-to-b from-blue-500 to-purple-500 origin-top scale-0 transition-transform duration-300 hidden md:block"
+                style={{ transform: "scaleY(1)" }}
+              />
+
+              <div className="group p-6 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-blue-500/50 transition-all duration-300">
+                <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-800">
+                      {experience.company}
+                    </h3>
+                    <p className="text-blue-600 font-medium">
+                      {experience.role}
+                    </p>
+                    <p className="text-gray-600 leading-relaxed mt-2">
+                      {experience.description}
+                    </p>
+                    <div className="mt-4 flex gap-2 flex-wrap">
+                      {experience.skills.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  <span className="px-4 py-1 bg-blue-50 text-blue-600 rounded-full text-sm whitespace-nowrap">
+                    {experience.period}
                   </span>
-                ))}
+                </div>
               </div>
-            </div>
-          </motion.div>
-        ))}
+            </motion.div>
+          ))}
+        </div>
       </div>
     </div>
   );
