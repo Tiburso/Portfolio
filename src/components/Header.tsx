@@ -10,7 +10,7 @@ const Header = () => {
     >
       <div className="container-wrapper py-4 flex items-center justify-between">
         <div className="text-2xl font-bold gradient-text uppercase tracking-wide">
-          MyPortfolio
+          Manuel Costa | Portfolio
         </div>
         <nav className="space-x-6">
           {["about", "education", "experience", "projects", "blog"].map(
