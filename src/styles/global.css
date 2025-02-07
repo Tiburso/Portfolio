@@ -2,7 +2,7 @@
 
 @layer base {
   body {
-    @apply text-gray-800 bg-gray-50 font-sans antialiased;
+    @apply text-gray-800 font-sans antialiased bg-gradient-to-br from-purple-50 to-blue-50;
   }
 
   h1,
@@ -69,6 +69,14 @@
     100% {
       background-position: 200% 0;
     }
+  }
+
+  .bg-base {
+    @apply bg-gradient-to-br from-purple-50 to-blue-50;
+  }
+
+  .bg-secondary {
+    @apply bg-white/70 backdrop-blur-sm;
   }
 }
 
