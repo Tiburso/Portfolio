@@ -1,21 +1,37 @@
 ---
-const pageTitle = "Home Page";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import About from "../components/About";
+import Education from "../components/Education.js";
+import Experience from "../components/Experience.js";
+import Projects from "../components/Projects";
+import BlogList from "../components/BlogList";
+import { getCollection } from "astro:content";
+
+// Fetch all blog posts from the "blog" collection and sort by publication date (newest first)
+const posts = await getCollection("blog");
+
+// Select a few (e.g. 3) latest posts to display on the homepage
+const latestPosts = posts.slice(0, 3);
 ---
 
+<BaseLayout>
+  <section id="about" class="py-20 bg-gray-50">
+    <About client:load />
+  </section>
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} >
-    <title>{pageTitle}</title>
-  </head>
-  <body>
-	<a href="/">Home</a>
-	<a href="/about/">About</a>
-	<a href="/blog/">Blog</a>
+  <section id="education" class="py-20">
+    <Education client:load />
+  </section>
 
-    <h1>{pageTitle}</h1>
-  </body>
-</html>
+  <section id="experience" class="py-20 bg-gray-50">
+    <Experience client:load />
+  </section>
+
+  <section id="projects" class="py-20">
+    <Projects client:load />
+  </section>
+
+  <section id="blog" class="py-20 bg-gray-50">
+    <BlogList client:load posts={latestPosts} />
+  </section>
+</BaseLayout>
