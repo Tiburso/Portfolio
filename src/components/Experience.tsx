@@ -5,24 +5,27 @@ const WORK_EXPERIENCES = [
     company: "TechCorp Inc.",
     role: "Software Engineer",
     period: "2021 - Present",
-    description:
+    description: [
       "Developed and maintained scalable web applications using modern frameworks. Collaborated with cross-functional teams to deliver high-quality software.",
+    ],
     skills: ["React", "TypeScript", "Node.js"],
   },
   {
     company: "Innovate Labs",
     role: "Junior Developer",
     period: "2019 - 2021",
-    description:
+    description: [
       "Contributed to the development of customer-facing applications. Worked on optimizing performance and user experience.",
+    ],
     skills: ["Vue.js", "JavaScript", "CSS"],
   },
   {
     company: "Digital Pioneers",
     role: "Frontend Intern",
     period: "2018 - 2019",
-    description:
+    description: [
       "Assisted in building responsive user interfaces and implementing design systems. Learned modern web development practices.",
+    ],
     skills: ["HTML", "CSS", "JavaScript"],
   },
 ];
@@ -58,9 +61,13 @@ const Experience = () => {
                     <p className="text-blue-600 font-medium">
                       {experience.role}
                     </p>
-                    <p className="text-gray-600 leading-relaxed mt-2">
-                      {experience.description}
-                    </p>
+                    <ul className="list-disc list-inside space-y-2 text-gray-600 leading-relaxed mt-2">
+                      {experience.description.map((bullet, i) => (
+                        <li key={i} className="pl-2">
+                          {bullet}
+                        </li>
+                      ))}
+                    </ul>
                     <div className="mt-4 flex gap-2 flex-wrap">
                       {experience.skills.map((tech) => (
                         <span
