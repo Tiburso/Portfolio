@@ -41,10 +41,10 @@ const About = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.3 }}
-              className="w-32 h-32 rounded-full flex-shrink-0 overflow-hidden bg-gradient-to-br from-purple-100 to-blue-100 shadow-lg"
+              className="w-48 h-48 rounded-full flex-shrink-0 overflow-hidden bg-gradient-to-br from-purple-100 to-blue-100 shadow-lg"
             >
               <img
-                src="/placeholder-avatar.jpg"
+                src="/src/assets/avatar.jpg"
                 alt="Manuel"
                 className="w-full h-full object-cover"
               />
