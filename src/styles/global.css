@@ -1,1 +1,44 @@
 @import "tailwindcss";
+
+@layer base {
+  body {
+    @apply text-gray-800 bg-gray-50 font-sans antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold;
+  }
+
+  a {
+    @apply transition-colors duration-300;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-sm hover:shadow-xl transition-shadow duration-300;
+  }
+
+  .container-wrapper {
+    @apply container mx-auto px-6;
+  }
+
+  .section-title {
+    @apply text-4xl font-bold mb-12;
+  }
+}
+
+@layer utilities {
+  .gradient-overlay {
+    @apply bg-gradient-to-b from-transparent to-black/60;
+  }
+}
