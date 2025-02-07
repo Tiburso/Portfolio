@@ -3,10 +3,8 @@ import { ArrowRightIcon } from "@radix-ui/react-icons";
 
 const BlogList = ({ posts }) => {
   return (
-    <div className="container mx-auto px-6">
-      <h2 className="text-4xl font-bold mb-12 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-        Latest Articles
-      </h2>
+    <div className="container-wrapper section-wrapper">
+      <h2 className="section-title gradient-text">Latest Articles</h2>
       <div className="grid gap-8 md:grid-cols-2">
         {posts.map((post, index) => (
           <motion.article
@@ -16,7 +14,7 @@ const BlogList = ({ posts }) => {
             transition={{ duration: 0.5, delay: index * 0.1 }}
             className="group relative"
           >
-            <div className="overflow-hidden rounded-xl bg-white shadow-sm hover:shadow-xl transition-shadow duration-300">
+            <div className="card overflow-hidden">
               <div className="aspect-[16/9] bg-gray-100">
                 {/* Blog thumbnail would go here */}
                 <div className="w-full h-full bg-gradient-to-br from-purple-100 to-blue-100" />

@@ -22,10 +22,8 @@ const Projects = () => {
   ];
 
   return (
-    <div className="container mx-auto px-6">
-      <h2 className="text-4xl font-bold mb-12 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-        Featured Projects
-      </h2>
+    <div className="container-wrapper section-wrapper">
+      <h2 className="section-title gradient-text">Featured Projects</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project, index) => (
           <motion.div
@@ -34,8 +32,8 @@ const Projects = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
           >
-            <div className="group relative bg-white rounded-xl overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="card group relative overflow-hidden">
+              <div className="absolute inset-0 gradient-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
               <div className="aspect-[4/3] bg-gray-100">
                 {/* Project thumbnail would go here */}

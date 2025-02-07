@@ -29,9 +29,9 @@ const Education = () => {
       viewport={{ once: false }}
       transition={{ duration: 0.8 }}
       exit={{ opacity: 0 }}
-      className="container mx-auto px-6"
+      className="container-wrapper section-wrapper mb-4"
     >
-      <h2 className="text-3xl font-bold mb-4">Education</h2>
+      <h2 className="section-title gradient-text">Education</h2>
       <motion.div
         variants={container}
         initial="hidden"
@@ -39,29 +39,23 @@ const Education = () => {
         viewport={{ once: false, amount: 0.2 }}
         className="space-y-4"
       >
-        <motion.div
-          variants={item}
-          className="p-4 border rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300"
-        >
-          <h3 className="text-2xl font-semibold">
-            Technicla University of Lisbon
+        <motion.div variants={item} className="card p-6">
+          <h3 className="text-2xl font-semibold text-gray-800">
+            Technical University of Lisbon
           </h3>
-          <p className="text-gray-600">
+          <p className="text-gray-600 mt-2">
             Bachelor of Science in Computer Science and Engineering
           </p>
-          <p className="text-gray-500 text-sm">2019 - 2022</p>
+          <p className="text-gray-500 text-sm mt-1">2019 - 2022</p>
         </motion.div>
-        <motion.div
-          variants={item}
-          className="p-4 border rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300"
-        >
-          <h3 className="text-2xl font-semibold">
+        <motion.div variants={item} className="card p-6">
+          <h3 className="text-2xl font-semibold text-gray-800">
             Eindhoven Technical University
           </h3>
-          <p className="text-gray-600">
+          <p className="text-gray-600 mt-2">
             Master of Science in Artificial Intelligence and Engineering Systems
           </p>
-          <p className="text-gray-500 text-sm">2023 - 2025</p>
+          <p className="text-gray-500 text-sm mt-1">2023 - 2025</p>
         </motion.div>
       </motion.div>
     </motion.div>

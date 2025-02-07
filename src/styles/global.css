@@ -33,7 +33,42 @@
   }
 
   .section-title {
-    @apply text-4xl font-bold mb-12;
+    @apply text-4xl font-bold mb-8; /* reduced from mb-12 */
+  }
+
+  .section-wrapper {
+    @apply py-16 relative;
+  }
+
+  .section-wrapper::after {
+    @apply content-[''] absolute -bottom-1 left-1/2 -translate-x-1/2;
+    width: 60%;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      theme("colors.purple.100") 15%,
+      theme("colors.purple.300") 30%,
+      theme("colors.blue.400") 50%,
+      theme("colors.purple.300") 70%,
+      theme("colors.purple.100") 85%,
+      transparent 100%
+    );
+    opacity: 0.7;
+    animation: shimmer 3s infinite linear;
+  }
+
+  .section-wrapper:last-child::after {
+    @apply hidden;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
   }
 }
 

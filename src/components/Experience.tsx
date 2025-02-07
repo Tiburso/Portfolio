@@ -46,10 +46,8 @@ const Experience = () => {
   const progressBar = useTransform(springProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <div className="container mx-auto px-6 relative py-20" ref={containerRef}>
-      <h2 className="text-4xl font-bold mb-12 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-        Work Experience
-      </h2>
+    <div className="container-wrapper section-wrapper" ref={containerRef}>
+      <h2 className="section-title gradient-text">Work Experience</h2>
 
       {/* Timeline track and progress indicator */}
       <div className="absolute left-8 top-40 bottom-20 w-0.5 bg-gray-200">
@@ -62,7 +60,9 @@ const Experience = () => {
         />
       </div>
 
-      <div className="space-y-16 ml-16">
+      <div className="space-y-8 ml-16">
+        {" "}
+        {/* reduced from space-y-16 */}
         {WORK_EXPERIENCES.map((experience, index) => (
           <motion.div
             key={experience.company}
@@ -72,7 +72,7 @@ const Experience = () => {
             transition={{ duration: 0.5 }}
             className="relative"
           >
-            <div className="bg-white rounded-xl p-8 shadow-[0_20px_70px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_70px_-15px_rgba(0,0,0,0.2)] transition-all duration-300">
+            <div className="card p-8">
               <div className="flex justify-between items-start mb-4">
                 <div>
                   <h3 className="text-2xl font-bold text-gray-800">
