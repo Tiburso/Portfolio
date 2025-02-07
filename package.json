@@ -17,6 +17,7 @@
     "@types/react-dom": "^19.0.3",
     "astro": "5.2.4",
     "autoprefixer": "^10.4.20",
+    "embla-carousel-react": "^8.5.2",
     "framer-motion": "^12.4.1",
     "gsap": "^3.12.7",
     "postcss": "^8.5.1",
