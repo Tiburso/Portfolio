@@ -11,18 +11,33 @@ const About = () => {
     >
       <div className="relative w-full">
         {/* Background gradient blobs */}
-        <div className="absolute -top-40 -left-20 w-96 h-96 bg-purple-100/50 rounded-full blur-3xl" />
-        <div className="absolute -bottom-40 -right-20 w-96 h-96 bg-blue-100/50 rounded-full blur-3xl" />
+        <div className="absolute -top-20 -left-10 w-64 md:w-96 h-64 md:h-96 bg-purple-100/50 rounded-full blur-3xl" />
+        <div className="absolute -bottom-20 -right-10 w-64 md:w-96 h-64 md:h-96 bg-blue-100/50 rounded-full blur-3xl" />
 
         {/* Main content */}
-        <div className="relative z-10 max-w-4xl mx-auto">
-          <div className="flex items-start gap-8 mb-2">
-            <div className="flex-1">
+        <div className="relative z-10 max-w-4xl mx-auto px-4">
+          <div className="flex flex-col md:flex-row md:items-start gap-6 md:gap-8 mb-6 md:mb-2">
+            {/* Image - Moved above text content for mobile */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.3 }}
+              className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-full mx-auto md:mx-0 flex-shrink-0 overflow-hidden bg-gradient-to-br from-purple-100 to-blue-100 shadow-lg order-first md:order-last"
+            >
+              <img
+                src="/src/assets/avatar.jpg"
+                alt="Manuel"
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+
+            {/* Text content */}
+            <div className="flex-1 text-center md:text-left">
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="text-6xl md:text-7xl font-bold gradient-text mb-2"
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold gradient-text mb-2 mt-2 md:mt-0"
               >
                 Hello, I'm Manuel
               </motion.h1>
@@ -31,31 +46,18 @@ const About = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                className="text-3xl md:text-4xl text-gray-700 mb-2"
+                className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-gray-700 mb-2"
               >
                 Software Engineer & Problem Solver
               </motion.h2>
             </div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.3 }}
-              className="w-48 h-48 rounded-full flex-shrink-0 overflow-hidden bg-gradient-to-br from-purple-100 to-blue-100 shadow-lg -mt-12"
-            >
-              <img
-                src="/src/assets/avatar.jpg"
-                alt="Manuel"
-                className="w-full h-full object-cover"
-              />
-            </motion.div>
           </div>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
-            className="text-xl text-gray-600 leading-relaxed mb-10 backdrop-blur-sm"
+            className="text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed mb-6 md:mb-10 text-center md:text-left backdrop-blur-sm"
           >
             I'm passionate about building scalable and efficient solutions. My
             journey in technology started at a young age, and I've honed my
@@ -66,7 +68,7 @@ const About = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
-            className="flex flex-wrap gap-4"
+            className="flex flex-wrap justify-center md:justify-start gap-2 md:gap-4"
           >
             {[
               "React",
@@ -77,7 +79,7 @@ const About = () => {
             ].map((skill) => (
               <span
                 key={skill}
-                className="px-6 py-2 text-lg rounded-full bg-gradient-to-r from-purple-50 to-blue-50 text-gray-700 border border-purple-100 shadow-sm"
+                className="px-4 md:px-6 py-1.5 md:py-2 text-sm md:text-base lg:text-lg rounded-full bg-gradient-to-r from-purple-50 to-blue-50 text-gray-700 border border-purple-100 shadow-sm"
               >
                 {skill}
               </span>
