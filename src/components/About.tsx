@@ -48,7 +48,7 @@ const About = () => {
                 transition={{ delay: 0.4 }}
                 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-gray-700 mb-2"
               >
-                Software Engineer & Problem Solver
+                Software Engineer & Problem
               </motion.h2>
             </div>
           </div>

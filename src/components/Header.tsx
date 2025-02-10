@@ -39,7 +39,7 @@ const Header = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-6">
-          {["about", "education", "experience", "projects", "blog"].map(
+          {["about", "education", "experience", "projects" /* "blog" */].map(
             (item) => (
               <a
                 key={item}
@@ -89,18 +89,21 @@ const Header = () => {
             className="md:hidden border-t border-gray-200"
           >
             <nav className="container-wrapper py-4 flex flex-col space-y-4">
-              {["about", "education", "experience", "projects", "blog"].map(
-                (item) => (
-                  <a
-                    key={item}
-                    href={`#${item}`}
-                    onClick={(e) => handleClick(e, item)}
-                    className="uppercase text-sm font-medium text-gray-700 hover:gradient-text transition-colors"
-                  >
-                    {item}
-                  </a>
-                )
-              )}
+              {[
+                "about",
+                "education",
+                "experience",
+                "projects" /* "blog" */,
+              ].map((item) => (
+                <a
+                  key={item}
+                  href={`#${item}`}
+                  onClick={(e) => handleClick(e, item)}
+                  className="uppercase text-sm font-medium text-gray-700 hover:gradient-text transition-colors"
+                >
+                  {item}
+                </a>
+              ))}
             </nav>
           </motion.div>
         )}
