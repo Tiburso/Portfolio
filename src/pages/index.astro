@@ -15,23 +15,23 @@ const latestPosts = posts.slice(0, 2);
 ---
 
 <BaseLayout>
-  <section id="about" class="py-20 bg-secondary">
+  <section id="about" class="py-10 sm:py-20 bg-secondary">
     <About client:load />
   </section>
 
-  <section id="education" class="py-20">
+  <section id="education" class="py-10 sm:py-20">
     <Education client:load />
   </section>
 
-  <section id="experience" class="py-20 bg-secondary">
+  <section id="experience" class="py-10 sm:py-20 bg-secondary">
     <Experience client:load />
   </section>
 
-  <section id="projects" class="py-20">
+  <section id="projects" class="py-10 sm:py-20">
     <Projects client:load />
   </section>
 
-  <!-- <section id="blog" class="py-20 bg-secondary">
+  <!-- <section id="blog" class="py-10 sm:py-20 bg-secondary">
     <BlogList client:load posts={latestPosts} />
   </section> -->
 </BaseLayout>

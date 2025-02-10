@@ -35,53 +35,53 @@ const Experience = () => {
     <div className="container-wrapper section-wrapper">
       <h2 className="section-title gradient-text">Work Experience</h2>
 
-      <div className="relative mt-8">
-        <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-gradient-to-b from-blue-500/20 to-purple-500/20 hidden md:block" />
+      <div className="relative">
+        <div className="timeline-line" />
 
-        <div className="space-y-8">
+        <div className="space-y-4 sm:space-y-6">
           {WORK_EXPERIENCES.map((experience, index) => (
             <motion.div
               key={experience.company}
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="relative ml-0 md:ml-8"
+              className="relative ml-6 sm:ml-8"
             >
-              <div
-                className="absolute -left-[8px] top-0 h-full w-[3px] bg-gradient-to-b from-blue-500 to-purple-500 origin-top scale-0 transition-transform duration-300 hidden md:block"
-                style={{ transform: "scaleY(1)" }}
-              />
+              <div className="timeline-dot" />
 
-              <div className="group p-6 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-blue-500/50 transition-all duration-300">
-                <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-800">
+              <div className="card p-4 sm:p-6">
+                <div className="flex flex-col gap-3">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-800">
                       {experience.company}
                     </h3>
-                    <p className="text-blue-600 font-medium">
-                      {experience.role}
-                    </p>
-                    <ul className="list-disc list-inside space-y-2 text-gray-600 leading-relaxed mt-2">
-                      {experience.description.map((bullet, i) => (
-                        <li key={i} className="pl-2">
-                          {bullet}
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="mt-4 flex gap-2 flex-wrap">
-                      {experience.skills.map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
+                    <span className="text-sm text-blue-600 font-medium px-3 py-1 rounded-full bg-blue-50 self-start sm:self-center">
+                      {experience.period}
+                    </span>
                   </div>
-                  <span className="px-4 py-1 bg-blue-50 text-blue-600 rounded-full text-sm whitespace-nowrap">
-                    {experience.period}
-                  </span>
+
+                  <p className="text-blue-600 font-medium text-sm sm:text-base">
+                    {experience.role}
+                  </p>
+
+                  <ul className="list-disc list-inside space-y-1 text-gray-600 text-sm sm:text-base">
+                    {experience.description.map((bullet, i) => (
+                      <li key={i} className="pl-1 sm:pl-2">
+                        {bullet}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="flex gap-1.5 flex-wrap">
+                    {experience.skills.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-2.5 py-1 bg-gray-100/80 text-gray-600 rounded-full text-xs sm:text-sm"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </motion.div>
