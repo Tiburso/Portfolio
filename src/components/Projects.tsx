@@ -79,7 +79,7 @@ const Projects = () => {
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="flex-[0_0_95%] sm:flex-[0_0_75%] lg:flex-[0_0_65%] min-w-0 px-1 sm:px-4"
+                className="flex-[0_0_95%] sm:flex-[0_0_60%] lg:flex-[0_0_45%] min-w-0 px-1 sm:px-4"
               >
                 <motion.div
                   animate={{
