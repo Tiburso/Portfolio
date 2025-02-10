@@ -36,7 +36,7 @@ const About = () => {
               className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-full mx-auto md:mx-0 flex-shrink-0 overflow-hidden bg-gradient-to-br from-purple-100 to-blue-100 shadow-lg order-first md:order-last md:-mt-12"
             >
               <img
-                src="/public/avatar.jpg"
+                src="/avatar.jpg"
                 alt="Manuel"
                 className="w-full h-full object-cover"
               />
