@@ -8,13 +8,11 @@ const Education = () => {
       degree:
         "Master of Science in Artificial Intelligence and Engineering Systems",
       period: "2023 - 2025",
-      current: true,
     },
     {
       school: "Technical University of Lisbon",
       degree: "Bachelor of Science in Computer Science and Engineering",
       period: "2019 - 2022",
-      current: false,
     },
   ];
 
@@ -51,11 +49,6 @@ const Education = () => {
                     <span className="text-sm text-blue-600 font-medium px-3 py-1 rounded-full bg-blue-50">
                       {edu.period}
                     </span>
-                    {edu.current && (
-                      <span className="text-xs text-green-600 font-medium px-2 py-0.5 rounded-full bg-green-50">
-                        Current
-                      </span>
-                    )}
                   </div>
                 </div>
                 <p className="text-sm sm:text-base text-gray-600">

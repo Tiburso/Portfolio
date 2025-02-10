@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   ArrowTopRightIcon,
   ChevronLeftIcon,
@@ -6,45 +6,10 @@ import {
 } from "@radix-ui/react-icons";
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
+import projects from "../info/projects";
 
 const Projects = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
-
-  const projects = [
-    {
-      title: "Project Alpha",
-      description: "A full-stack web application built with React and Node.js.",
-      technologies: ["React", "Node.js", "MongoDB", "TypeScript"],
-      image: "/path-to-image.jpg", // Add your image paths
-      link: "#",
-      github: "#",
-    },
-    {
-      title: "Project Beta",
-      description:
-        "An innovative mobile app leveraging AI for personalized experiences.",
-      technologies: ["AI", "Mobile", "React Native"],
-      image: "/path-to-image.jpg",
-      link: "#",
-      github: "#",
-    },
-    {
-      title: "Project Gamma",
-      description: "A cloud-based solution for real-time data analytics.",
-      technologies: ["Cloud", "Data Analytics", "Python"],
-      image: "/path-to-image.jpg",
-      link: "#",
-      github: "#",
-    },
-    {
-      title: "Project Teta",
-      description: "A cloud-based solution for real-time data analytics.",
-      technologies: ["Cloud", "Data Analytics", "Python"],
-      image: "/path-to-image.jpg",
-      link: "#",
-      github: "#",
-    },
-  ];
 
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: "center",
@@ -119,13 +84,15 @@ const Projects = () => {
                         </div>
 
                         <div className="flex gap-4">
-                          <a
-                            href={project.link}
-                            className="inline-flex items-center text-sm sm:text-base text-blue-400 hover:text-blue-300 transition-colors"
-                          >
-                            Demo
-                            <ArrowTopRightIcon className="ml-1 w-4 h-4" />
-                          </a>
+                          {project.link && (
+                            <a
+                              href={project.link}
+                              className="inline-flex items-center text-sm sm:text-base text-blue-400 hover:text-blue-300 transition-colors"
+                            >
+                              Demo
+                              <ArrowTopRightIcon className="ml-1 w-4 h-4" />
+                            </a>
+                          )}
                           <a
                             href={project.github}
                             className="inline-flex items-center text-sm sm:text-base text-gray-400 hover:text-gray-300 transition-colors"

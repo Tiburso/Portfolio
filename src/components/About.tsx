@@ -16,13 +16,13 @@ const About = () => {
 
         {/* Main content */}
         <div className="relative z-10 max-w-4xl mx-auto px-4">
-          <div className="flex flex-col md:flex-row md:items-start gap-6 md:gap-8 mb-6 md:mb-2">
-            {/* Image - Moved above text content for mobile */}
+          <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
+            {/* Image - Moved up with negative margin */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.3 }}
-              className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-full mx-auto md:mx-0 flex-shrink-0 overflow-hidden bg-gradient-to-br from-purple-100 to-blue-100 shadow-lg order-first md:order-last"
+              className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-full mx-auto md:mx-0 flex-shrink-0 overflow-hidden bg-gradient-to-br from-purple-100 to-blue-100 shadow-lg order-first md:order-last md:-mt-16"
             >
               <img
                 src="/src/assets/avatar.jpg"
@@ -31,13 +31,13 @@ const About = () => {
               />
             </motion.div>
 
-            {/* Text content */}
-            <div className="flex-1 text-center md:text-left">
+            {/* Text content - reduced bottom margin */}
+            <div className="flex-1 text-center md:text-left mb-2">
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold gradient-text mb-2 mt-2 md:mt-0"
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold gradient-text mb-1 mt-2 md:mt-0"
               >
                 Hello, I'm Manuel
               </motion.h1>
@@ -46,9 +46,9 @@ const About = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-gray-700 mb-2"
+                className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-gray-700 mb-1"
               >
-                Software Engineer & Problem
+                Software & AI Engineer
               </motion.h2>
             </div>
           </div>
