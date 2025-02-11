@@ -67,9 +67,9 @@ const About = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
-            className="text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed mb-6 md:mb-10 text-justify backdrop-blur-sm space-y-6"
+            className="text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed mb-6 md:mb-10 backdrop-blur-sm space-y-6"
           >
-            <span className="block">
+            <span className="block text-justify [text-align-last:left]">
               AI and Engineering Systems professional with a passion for
               building intelligent, scalable solutions. Currently advancing AI
               systems at
@@ -77,35 +77,42 @@ const About = () => {
                 {" "}
                 Mercedes-Benz
               </span>
-              , where I'm developing{" "}
+              , where I'm developing
               <span className="text-gray-800 font-medium">
+                {" "}
                 state-of-the-art RAG systems
               </span>{" "}
               and optimizing ML pipelines.
             </span>
 
-            <span className="block">
-              My journey spans from founding engineer at{" "}
-              <span className="text-purple-700 font-medium">WardAnalytics</span>
-              , where I architected{" "}
+            <span className="block text-justify [text-align-last:left]">
+              My journey spans from founding engineer at
+              <span className="text-purple-700 font-medium">
+                {" "}
+                WardAnalytics
+              </span>
+              , where I architected
               <span className="text-gray-800 font-medium">
+                {" "}
                 blockchain data infrastructure
               </span>
-              , to technical consultancy at{" "}
-              <span className="text-purple-700 font-medium">JUNITEC</span>,
+              , to technical consultancy at
+              <span className="text-purple-700 font-medium"> JUNITEC</span>,
               collaborating with industry leaders like Fujitsu.
             </span>
 
-            <span className="block">
-              I thrive on challenges across the tech spectrum - from developing{" "}
-              <span className="text-purple-700 font-medium">TacoQ</span>, a{" "}
+            <span className="block text-justify [text-align-last:left]">
+              I thrive on challenges - from developing
+              <span className="text-purple-700 font-medium"> TacoQ</span>, a
               <span className="text-gray-800 font-medium">
+                {" "}
                 high-performance distributed task queue
               </span>{" "}
-              in Rust, to creating{" "}
-              <span className="text-purple-700 font-medium">EnerVision</span>,
-              an{" "}
+              in Rust, to creating
+              <span className="text-purple-700 font-medium"> EnerVision</span>,
+              an
               <span className="text-gray-800 font-medium">
+                {" "}
                 AI-powered solution
               </span>{" "}
               for photovoltaic analysis. My expertise combines deep technical
